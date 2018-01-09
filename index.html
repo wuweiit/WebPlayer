@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="${lang}">
+  <head>
+    <title>Test</title>
+    <meta charset="utf-8">
+  </head>
+
+  <body>
+
+<div id="playercontainer"></div>
+<script type="text/javascript" src="player/cyberplayer.js"></script>
+<script type="text/javascript">
+    var player = cyberplayer("playercontainer").setup({
+        width: 680,
+        height: 448,
+        isLive: true, // 标明是否是直播
+         // file: "rtmp://demo.srs.com:1935/live/livestream/haha", // <—rtmp直播地址
+        // file: "http://demo.srs.com:8080/live/livestream/haha.flv", // <—rtmp直播地址
+        file: "rtmp://10.211.55.7:1935/cameras/38e3fb0707574e0db192d362860047b7", // <—rtmp直播地址
+        fallbackfile: "http://cyberplayerplay.kaywang.cn/cyberplayer/demo201711-L1.m3u8", // <— 备用播放地址，为了电脑上用rtmp流播放，手机上播放设置hls流
+        autostart: true,
+        stretching: "uniform",
+        volume: 100,
+        controls: true,
+        ak: "8E8E0A8005f39dbc080f58e207ea62e0" // 公有云平台注册即可获得accessKey
+    });
+</script>
+
+  </body>
+ </html>

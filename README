@@ -1,0 +1,18 @@
+使用方法：
+首先推荐看demo演示：http://cyberplayer.bcelive.com/demo/new/index.html
+3.1.0版本简介：
+flv和hls视频格式的点播及直播，在支持MediaSourceExtension的浏览器中高优使用H5进行播放，以应对flash即将下线的现状。
+在其他低版本浏览器环境中，依旧自动调用flash播放器进行播放，目前用户依旧可以通过primary参数进行调度控制。
+
+3.1.0更新日志如下：
+1、解决一些浏览器兼容性问题。
+2、自动根据浏览器环境来加载videojs从而实现h5播放hls。
+3、增加异常处理来提高其可用性。
+
+几个注意点：
+1、flv或hls必须支持跨域访问，即ResponseHeader中要设置Access-Control-Allow-Origin:*，不然会出错，除非设置了primary: 'flash'通过flash播放器播放（并不推荐这么做）。
+2、用H5播放hls格式视频此版本无需加载videojs文件，会自动根据系统环境来加载。
+3、播放直播视频流的时候，一定要设置isLive: true。
+4、在部分android手机环境的浏览器上，原生不支持播放hls。
+
+更多帮助和API请见：https://cloud.baidu.com/doc/MCT/Web-SDK.html
